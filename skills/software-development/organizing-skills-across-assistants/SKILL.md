@@ -23,6 +23,26 @@ Compare skills by frontmatter name and full directory hash, not by folder shape 
 7. Keep assistant-specific variants when prompts, helper files, or tool assumptions differ.
 8. Prefer a shared class-level umbrella skill plus `references/`, `templates/`, or `scripts/` for the organizing procedure.
 
+8. Prefer a shared class-level umbrella skill plus `references/`, `templates/`, or `scripts/` for the organizing procedure.
+9. If the goal includes a monorepo main branch containing all assistants as subdirectories:
+   a. Clone the shared repo.
+   b. For each assistant branch, run: `git read-tree --prefix=<dir>/ origin/<branch>`
+      - e.g. `git read-tree --prefix=.agents/ origin/agents`
+      - e.g. `git read-tree --prefix=.hermes/ origin/hermes`
+   c. This stages the tree without merging history — clean, isolated subdirs.
+   d. Commit and push to main.
+   e. Branches remain usable for per-assistant incremental sync; main is the monorepo snapshot.
+
+## Monorepo merge pattern (git read-tree)
+`git read-tree` is the right tool when you want N branches inside one main branch
+as separate subdirectories, without merging their commit histories.
+Do NOT use `git subtree` or `git merge --no-ff` for this — they carry history and
+conflict overhead. `git read-tree` stages the file tree directly from a remote ref.
+
+Warning: symlinks (mode 120000) stored in git branches are preserved as blob symlinks
+in the target tree — they don't behave as filesystem symlinks in the monorepo
+unless the relative path is correct for the new location. Verify with `git ls-tree HEAD <path>`.
+
 ## Common pitfalls
 - Comparing only `SKILL.md` and missing supporting prompts.
 - Treating directory names as canonical when one assistant uses categories and another uses a flat layout.

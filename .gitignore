@@ -23,8 +23,11 @@ audio_cache/
 image_cache/
 cache/
 
-# Sandboxes
-sandboxes/
+# Usage tracking
+skills/.usage.json
+*.lock.json
+LEO/
+SOUL.md
 
 # LSP
 lsp/
