@@ -1,0 +1,8 @@
+# Scripts temp
+*.sh
+
+# OpenCode lock
+.opencode/
+
+# OS files
+.DS_Store
