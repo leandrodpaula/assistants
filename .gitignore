@@ -1,2 +1,65 @@
 # OS files
 .DS_Store
+# Secrets
+.env
+.env.*
+*.local
+
+# Auth tokens
+auth.json
+auth.lock
+
+# Session history
+.hermes_history/
+sessions/
+memories/
+
+# Logs
+logs/
+
+# Backups
+config.yaml.bak*
+
+# Image/audio cache
+audio_cache/
+image_cache/
+cache/
+
+# Sandboxes
+sandboxes/
+
+# LSP
+lsp/
+
+# Cron state
+cron/
+
+# State DB
+state.db
+state.db-*
+
+# Processes
+processes.json
+
+# Pairing
+pairing/
+
+# Pastes
+pastes/
+
+# Interrupt debug
+interrupt_debug.log
+
+# Update check
+.update_check
+.install_method
+
+# Model caches
+models_dev_cache.json
+ollama_cloud_models_cache.json
+
+# OS files
+.DS_Store
+
+# Hooks
+hooks/
