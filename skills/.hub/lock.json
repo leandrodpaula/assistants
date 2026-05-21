@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "installed": {
+    "emil-design-eng": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/emilkowalski/skill/emil-design-eng",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:433b5a239cda18e0",
+      "install_path": "emil-design-eng",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {},
+      "installed_at": "2026-05-20T13:56:03.204938+00:00",
+      "updated_at": "2026-05-20T13:56:03.204966+00:00"
+    },
+    "frontend-design": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/anthropics/skills/frontend-design",
+      "trust_level": "trusted",
+      "scan_verdict": "caution",
+      "content_hash": "sha256:dc9384b7afb45840",
+      "install_path": "frontend-design",
+      "files": [
+        "LICENSE.txt",
+        "SKILL.md"
+      ],
+      "metadata": {},
+      "installed_at": "2026-05-20T13:56:56.348859+00:00",
+      "updated_at": "2026-05-20T13:56:56.348871+00:00"
+    }
+  }
+}
